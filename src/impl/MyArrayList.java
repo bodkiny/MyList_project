@@ -36,6 +36,8 @@ public class MyArrayList<E> implements MyList<E> {
     public void add(E element, int index) {
         if (index > size) {
             throw new IndexOutOfBoundsException();
+        } else if (index < 0) {
+            throw new IllegalArgumentException("Invalid argument: " + index);
         }
 
         if (size == container.length) {
@@ -62,6 +64,8 @@ public class MyArrayList<E> implements MyList<E> {
     public E removeByIndex(int index) {
         if (index > size) {
             throw new IndexOutOfBoundsException();
+        } else if (index < 0) {
+            throw new IllegalArgumentException("Invalid argument: " + index);
         }
 
         E elementToRemove = (E) container[index];
